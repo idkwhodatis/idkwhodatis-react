@@ -1,0 +1,8 @@
+{
+    "date":"12.5.2022",
+    "category":"game",
+    "tags":["Python","OpenCV"],
+    "description":"A script to automatically run restaurant in game Nobody.",
+    "repo":"https://github.com/idkwhodatis/NobodyAutoRestaurant",
+    "preview":".gif"
+}

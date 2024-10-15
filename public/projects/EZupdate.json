@@ -1,0 +1,8 @@
+{
+    "date":"5.18.2023",
+    "category":"software",
+    "tags":["Electron","Vue.js"],
+    "description":"Update open source software from their github repos on Windows.",
+    "repo":"https://github.com/idkwhodatis/EZupdate",
+    "preview":".png"
+}
