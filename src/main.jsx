@@ -4,6 +4,7 @@ import {createTheme,ThemeProvider} from '@mui/material/styles';
 import {CssBaseline} from '@mui/material';
 import App from './App.jsx'
 import './assets/index.css'
+import ReactGA from "react-ga4";
 
 const theme=createTheme({
   palette:{
@@ -28,12 +29,13 @@ const theme=createTheme({
   },
 });
 
+ReactGA.initialize('G-72TN0WS6GH');
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
       <App/>
     </ThemeProvider>
-  // </StrictMode>
+  </StrictMode>
 )
