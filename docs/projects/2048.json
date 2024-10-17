@@ -1,0 +1,8 @@
+{
+    "date":"4.13.2021",
+    "category":"game",
+    "tags":["Java","Swing"],
+    "description":"A 2048 game with undo and highest score saving function written in Java.",
+    "repo":"https://github.com/idkwhodatis/2048",
+    "preview":".png"
+}

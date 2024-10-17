@@ -1,0 +1,8 @@
+{
+    "date":"3.28.2022",
+    "category":"software",
+    "tags":["C"],
+    "description":"A Memory Management Simulator written in C.",
+    "repo":"https://github.com/idkwhodatis/Memory-Management-Simulator",
+    "preview":"none"
+}

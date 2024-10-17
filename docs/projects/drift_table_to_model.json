@@ -1,0 +1,8 @@
+{
+    "date":"9.21.2024",
+    "category":"software",
+    "tags":["Dart"],
+    "description":"Dart builder to generate model classes from drift table classes.",
+    "repo":"https://pub.dev/packages/drift_table_to_model",
+    "preview":"none"
+}

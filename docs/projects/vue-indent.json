@@ -1,0 +1,8 @@
+{
+    "date":"4.23.2024",
+    "category":"software",
+    "tags":["JavaScript","VS Code"],
+    "description":"A VSCode plugin that dynamically adjust indentation length for .vue file.",
+    "repo":"https://marketplace.visualstudio.com/items?itemName=idkwhodatis.vue-indent",
+    "preview":".png"
+}
