@@ -2,7 +2,7 @@
     "date":"4.23.2024",
     "category":"software",
     "tags":["JavaScript","VS Code"],
-    "description":"A 2048 game with undo and highest score saving function written in Java.",
+    "description":"A VSCode plugin that dynamically adjust indentation length for .vue file.",
     "repo":"https://marketplace.visualstudio.com/items?itemName=idkwhodatis.vue-indent",
     "preview":".png"
 }

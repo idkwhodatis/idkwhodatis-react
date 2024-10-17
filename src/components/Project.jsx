@@ -1,29 +1,32 @@
-import {proxy,useSnapshot} from 'valtio'
+import {useState,forwardRef} from 'react';
 
-import {Card,CardMedia,CardContent,CardActions,IconButton,Chip,Dialog,Typography,Box} from '@mui/material';
+import {Card,CardMedia,CardContent,CardActions,IconButton,Chip,Dialog,Typography,Box,Grow} from '@mui/material';
 import {OpenInNew} from '@mui/icons-material'
 
-const state=proxy({
-  imgDialog:false
-});
+const Transition=forwardRef((props,ref)=>{return <Grow ref={ref} {...props}/>;});
 
 function Project({project}){
-  const snap=useSnapshot(state);
+  const [imgDialog,setImgDialog]=useState(false);
 
   const date=project.date.format('MMM D, YYYY');
   const preview=project.preview==='none'?'/projects/preview/none.jpg':'/projects/preview/'+project.name+project.preview;
+
+  const toggleDialog=()=>{
+    setImgDialog(!imgDialog);
+  }
 
   return (
     <>
       <Card sx={{backgroundColor:'secondary.main',maxWidth:'100%'}}>
         {project.category==='music'?(
-            <CardMedia component="video" src={project.preview} controls sx={{aspectRatio:'4/3'}}/>
+            <iframe src={project.preview} style={{aspectRatio:'4/3',width:'100%',height:'auto',borderRadius:'8px',border:'none'}} allow="autoplay;encrypted-media" allowFullScreen/>
           ):(
-            <CardMedia component="img" image={preview} sx={{aspectRatio:'4/3',borderRadius:'8px',objectFit:'contain'}}>
-              {/* <Box sx={{position:'absolute',bottom:0,right:0,padding:'8px',background:'rgba(0,0,0,0.5)'}}>
-                <Typography variant="subtitle2">{project.date.format('MMM D, YYYY')}</Typography>
-              </Box> */}
-            </CardMedia>
+            <Box sx={{ position: 'relative' }}>
+              <CardMedia onClick={toggleDialog} component="img" image={preview} sx={{aspectRatio:'4/3',borderRadius:'8px',objectFit:'contain'}}/>
+              <Box sx={{position:'absolute',bottom:0,right:0,backgroundColor:'rgba(0,0,0,0.5)',color:'white',padding:'16px',borderRadius:'4px 0 0 0'}}>
+                <Typography variant="subtitle2">{date}</Typography>
+              </Box>
+            </Box>
           )
         }
 
@@ -46,8 +49,8 @@ function Project({project}){
         </CardContent>
       </Card>
 
-      <Dialog open={snap.imgDialog} fullWidth maxWidth="md">
-        <CardMedia component="img" image={project.preview} sx={{ borderRadius: '8px', maxWidth: '75vw', maxHeight: '80vh' }} />
+      <Dialog open={imgDialog} onClose={toggleDialog} maxWidth="100vw" TransitionComponent={Transition} PaperProps={{style:{backgroundColor:'transparent'}}}>
+        <img onClick={toggleDialog} src={preview} alt={project.name} style={{width:'80vw',height:'95vh',maxWidth:'80vw',maxHeight:'95vh',objectFit:'contain'}}/>
       </Dialog>
     </>
   )
