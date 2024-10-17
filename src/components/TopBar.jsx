@@ -25,7 +25,7 @@ function TopBar(){
 export default TopBar
 
 function toHome(home){
-  if(router.state.location.pathname!='/'){
+  if(router.state.location.pathname!='/idkwhodatis.github.io-react'){
     router.navigate('/').then(()=>{
       if(!home){
         setTimeout(()=>{
@@ -41,7 +41,7 @@ function toHome(home){
 }
 
 function toAbout(){
-  if(router.state.location!='/about'){
+  if(router.state.location.pathname!='/idkwhodatis.github.io-react/about'){
     router.navigate('/about');
   }
 }

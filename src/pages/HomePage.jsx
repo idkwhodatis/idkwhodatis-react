@@ -167,8 +167,6 @@ function scrollSectionHandler(){
 
 function scrollHandler(event,home){
   if(home){
-    console.log(event.deltaY);
-    console.log(state.scrollOffset);
     if(event.deltaY<0&&state.scrollOffset==0){
       event.preventDefault();
       scrollTo(true);
